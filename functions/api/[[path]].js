@@ -35,9 +35,15 @@ function textResponse(body, extra = {}) {
   });
 }
 
-// "中国名言名句"合集即官方诗词分类（i），全为中国古典文学，不含译作。
+// "中国名言名句"合集在官方诗词分类（i）里进一步筛掉作者为空或占位作者，
+// 只保留有明确中文作者和中文出处的条目，避免 null/佚名混入。
 function isChineseClassic(item) {
-  return CHINESE_COLLECTION.types.includes(item.type);
+  if (!CHINESE_COLLECTION.types.includes(item.type)) return false;
+  const author = (item.from_who ?? '').trim();
+  const source = (item.from ?? '').trim();
+  if (!author || !source) return false;
+  if (/^(佚名|无名|网络|网友|未知)$/.test(author)) return false;
+  return /[\u3400-\u9fff]/.test(author) && /[\u3400-\u9fff]/.test(source);
 }
 
 function parseNonNegativeInt(value) {

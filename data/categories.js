@@ -16,8 +16,8 @@ export const CATEGORIES = [
   { key: 'l', name: '抖机灵', aliases: ['l', 'funny', '抖机灵'] },
 ]
 
-// 中国名言名句合集：直接对应官方「诗词」分类（i），全部为中国古典文学，
-// 有明确作者和出处，不含译作，零误判。c=cn 或 c=中国 走这个合集。
+// 中国名言名句合集：以官方「诗词」分类（i）为底，API 运行时再过滤空作者和
+// 占位作者，只保留有明确中文作者和出处的 683 条。c=cn 或 c=中国 走这个合集。
 export const CHINESE_COLLECTION = {
   key: 'cn',
   name: '中国名言名句',

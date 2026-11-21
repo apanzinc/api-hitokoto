@@ -38,7 +38,7 @@ curl "https://hitokoto.apanzinc.top/api"
 
 ## 中国名言名句
 
-`c=cn`（或 `c=中国`、`c=china`）进入中国名言名句合集，对应官方「诗词」分类，收录 755 条中国古典诗词。`c=cn` 时返回的 `category` 为「中国名言名句」，句子本身的 `type` 仍是官方分类码 `i`。
+`c=cn`（或 `c=中国`、`c=china`）进入中国名言名句合集，以官方「诗词」分类为底，过滤空作者和占位作者后保留 683 条有明确中文作者和出处的中国古典诗词。`c=cn` 时返回的 `category` 为「中国名言名句」，句子本身的 `type` 仍是官方分类码 `i`。
 
 ```
 curl "https://hitokoto.apanzinc.top/api?c=cn"
@@ -104,7 +104,7 @@ curl "https://hitokoto.apanzinc.top/api?c=cn&format=quote"
 | j | 网易云 | ncm、netease、网易云 |
 | k | 哲学 | philosophy、哲学 |
 | l | 抖机灵 | funny、抖机灵 |
-| cn | 中国名言名句 | 中国、china（等价于 i 类诗词） |
+| cn | 中国名言名句 | 中国、china（从 i 类诗词中筛选） |
 
 示例：
 

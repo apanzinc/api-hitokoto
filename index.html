@@ -94,6 +94,18 @@
             margin-bottom: 48px;
         }
 
+        .category-select {
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: #8c7b6b;
+            background: #f7f3ed;
+            border: 1px solid #d4c8b8;
+            border-radius: 4px;
+            padding: 8px 12px;
+            margin-right: 12px;
+            cursor: pointer;
+        }
+
         .json-display {
             margin-bottom: 16px;
         }
@@ -353,6 +365,7 @@
             <table>
                 <tr><td>地址</td><td><code>GET /api</code></td></tr>
                 <tr><td>返回</td><td>JSON</td></tr>
+                <tr><td>分类</td><td><code>c=cn</code> 中国名言名句</td></tr>
             </table>
         </div>
 
@@ -368,6 +381,21 @@
         </div>
 
         <div class="action-area">
+            <select class="category-select" id="categorySelect" onchange="fetchHitokoto()">
+                <option value="cn">中国名言名句</option>
+                <option value="i">诗词</option>
+                <option value="d">文学</option>
+                <option value="k">哲学</option>
+                <option value="h">影视</option>
+                <option value="a">动画</option>
+                <option value="c">游戏</option>
+                <option value="e">原创</option>
+                <option value="f">网络</option>
+                <option value="g">其他</option>
+                <option value="b">漫画</option>
+                <option value="j">网易云</option>
+                <option value="l">抖机灵</option>
+            </select>
             <button class="refresh-btn" onclick="fetchHitokoto()">
                 换一句
                 <span class="arrow">&rarr;</span>
@@ -413,7 +441,8 @@
             button.disabled = true;
 
             try {
-                var response = await fetch('/api');
+                var category = document.getElementById('categorySelect').value;
+                var response = await fetch('/api?c=' + encodeURIComponent(category));
                 if (!response.ok) throw new Error('HTTP ' + response.status);
                 var data = await response.json();
 

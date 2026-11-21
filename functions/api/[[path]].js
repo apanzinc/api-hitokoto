@@ -128,7 +128,8 @@ export async function onRequestGet(context) {
     }
 
     const categoryInput = params.get('c') ?? params.get('type');
-    if (categoryInput && resolveCategory(categoryInput) === null) {
+    const requestedCategory = resolveCategory(categoryInput);
+    if (categoryInput && requestedCategory === null) {
       return jsonResponse(
         {
           error: 'INVALID_CATEGORY',
@@ -163,7 +164,7 @@ export async function onRequestGet(context) {
     // 默认 JSON：保留官方字段，追加分类中文名，方便前端直接展示。
     return jsonResponse({
       ...picked,
-      category: categoryName(picked.type),
+      category: requestedCategory === 'cn' ? CHINESE_COLLECTION.name : categoryName(picked.type),
     });
   } catch (error) {
     return jsonResponse({ error: 'API_ERROR', message: error.message }, 500);

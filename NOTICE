@@ -1,0 +1,76 @@
+api-hitokoto — 修改声明 / Notice of Modification
+=================================================
+
+本节依据 GNU Affero General Public License v3.0 第 5 条 (a) 项要求，
+对修改后的版本作出显著声明并注明相关日期。
+
+This notice is provided under Section 5(a) of the GNU Affero General
+Public License v3.0, which requires a modified version to carry prominent
+notices stating that it was modified and giving a relevant date.
+
+
+原作品 / Original work
+-----------------------
+  仓库 / Repository : https://github.com/welyfun/api-hitokoto
+  版权 / Copyright  : Copyright (C) welyfun and contributors
+  许可 / License    : GNU AGPL v3.0（见本仓库 LICENSE 文件）
+
+修改版本 / Modified version
+---------------------------
+  仓库 / Repository : https://github.com/apanzinc/api-hitokoto
+  修改者 / Modifier : apanzinc <apanzinc@outlook.com>
+  修改日期 / Date   : 2026-11-20 至 2026-11-21
+  线上地址 / Deploy : https://hitokoto.apanzinc.top
+
+本修改版本整体仍按 GNU AGPL v3.0 授权，未更改许可证条款。
+This modified version remains licensed as a whole under GNU AGPL v3.0.
+
+
+被修改的文件 / Modified files
+-----------------------------
+functions/api/[[path]].js
+    重写请求处理逻辑：新增 c / min_length / max_length 等筛选参数、
+    format 输出格式（json / text / quote / js）、编码处理与分类解析；
+    响应头调整。
+
+build-data.js
+    改为把 sentences/*.json 合并结果直接写入 data/sentences.js 并提交进
+    仓库（原版仅在部署时生成，导致新 clone 只有 1 条样例）；输出改为
+    紧凑 JSON 以压缩体积。
+
+data/sentences.js
+    由上述构建脚本重新生成的完整词库（11279 条），替换原版单条样例。
+
+data/categories.js（新增文件，非原作品内容）
+    新增分类元数据与中文检索别名，供参数解析使用。
+
+index.html
+    页面样式与文档内容调整，补充参数说明。
+
+package.json
+    项目名与描述由 Pages 版改为 Workers 版。
+
+worker.js（新增文件，非原作品内容）
+    新增 Cloudflare Workers 入口，含首页 HTML 与路由转发。
+
+wrangler.toml（新增文件，非原作品内容）
+    新增 Workers 部署配置。
+
+README.md
+    重写为 Workers 版说明，补充参数文档、缓存与部署章节。
+
+
+未改动的文件 / Unmodified files
+-------------------------------
+LICENSE, _headers, favicon.ico, robots.txt,
+.github/workflows/sync-sentences.yml,
+sentences/a.json ... sentences/l.json（12 个词库分片，内容来自
+hitokoto-osc/sentences-bundle）。
+
+
+语句数据版权 / Sentence data copyright
+--------------------------------------
+sentences/ 目录与 data/sentences.js 中的语句数据来源于：
+  - 一言 https://hitokoto.cn/
+  - 句子包 https://sentences-bundle.hitokoto.cn/
+其版权归各原作者所有，本仓库仅作聚合与分发，不主张任何权利。

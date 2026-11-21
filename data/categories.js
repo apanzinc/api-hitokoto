@@ -1,3 +1,6 @@
+// 本文件为 apanzinc 在 welyfun/api-hitokoto（AGPL-3.0）基础上新增，非原作品内容。
+// Added by apanzinc <apanzinc@outlook.com>, 2026-11-21。详见仓库根目录 NOTICE。
+//
 // 分类元数据：对齐官方 sentences-bundle 的 categories.json，并补充中文检索别名。
 // key 是官方分类码，name 是中文名，aliases 是可被 URL 参数 c 识别的写法。
 

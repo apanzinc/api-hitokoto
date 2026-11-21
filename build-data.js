@@ -1,3 +1,8 @@
+// 本文件修改自 welyfun/api-hitokoto（AGPL-3.0）。
+// Copyright (C) welyfun and contributors
+// Modified by apanzinc <apanzinc@outlook.com>, 2026-11-21.
+// 修改内容与完整修改文件清单见仓库根目录 NOTICE。
+
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -36,6 +41,7 @@ function buildSentencesData() {
   // 用紧凑 JSON，避免缩进把体积撑大（11279 条缩进后约 4.4MB，紧凑约 3.2MB）。
   const output = `// 自动生成的句子数据文件，由 build-data.js 从 sentences/*.json 合并而来。
 // 共 ${allSentences.length} 条。请勿手工编辑，改动 sentences 后重新执行 npm run build。
+// 本文件修改自 welyfun/api-hitokoto（AGPL-3.0）；Modified by apanzinc <apanzinc@outlook.com>, 2026-11-21。详见仓库根目录 NOTICE。
 const sentencesData = ${JSON.stringify(allSentences)};
 
 export function getSentencesData() {

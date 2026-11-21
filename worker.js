@@ -1,3 +1,7 @@
+// 本文件为 apanzinc 在 welyfun/api-hitokoto（AGPL-3.0）基础上新增，非原作品内容。
+// Copyright (C) welyfun and contributors（原作品部分）
+// Added by apanzinc <apanzinc@outlook.com>, 2026-11-21。详见仓库根目录 NOTICE。
+
 import { onRequestGet, onRequestOptions } from './functions/api/[[path]].js';
 
 const CORS_HEADERS = {
@@ -20,6 +24,8 @@ const HOME_HTML = `<!doctype html>
     @media (prefers-color-scheme: dark) { main { background: #161b22; } }
     h1 { margin: 0 0 12px; font-size: 28px; }
     p { line-height: 1.7; }
+    footer { margin-top: 24px; padding-top: 16px; border-top: 1px solid rgba(127,127,127,.25); }
+    footer p { margin: 0; font-size: 12px; line-height: 1.6; opacity: .72; }
     code { padding: 2px 6px; border-radius: 6px; background: rgba(127,127,127,.16); }
     a { color: #0969da; }
     @media (prefers-color-scheme: dark) { a { color: #58a6ff; } }
@@ -32,6 +38,12 @@ const HOME_HTML = `<!doctype html>
     <p>调用接口：<code>GET /api</code></p>
     <p>中国名言名句：<a href="/api?c=cn&format=quote">/api?c=cn&format=quote</a></p>
     <p>完整参数说明见仓库 README。</p>
+    <footer>
+      <p>本程序修改自 <a href="https://github.com/welyfun/api-hitokoto">welyfun/api-hitokoto</a>（Copyright &copy; welyfun and contributors），
+      按 <a href="https://www.gnu.org/licenses/agpl-3.0.html">GNU AGPL v3.0</a> 授权，不提供任何担保。
+      修改者 apanzinc，修改日期 2026-11-21，修改说明见仓库 NOTICE。
+      源码：<a href="https://github.com/apanzinc/api-hitokoto">apanzinc/api-hitokoto</a>。</p>
+    </footer>
   </main>
 </body>
 </html>`;

@@ -1,3 +1,6 @@
+# 本文件为 apanzinc 在 welyfun/api-hitokoto（AGPL-3.0）基础上新增，非原作品内容。
+# Added by apanzinc <apanzinc@outlook.com>, 2026-11-21。详见仓库根目录 NOTICE。
+
 name = "api-hitokoto"
 main = "worker.js"
 compatibility_date = "2026-11-21"

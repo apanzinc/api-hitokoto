@@ -2,6 +2,7 @@
   "name": "hitokoto-api-workers",
   "version": "1.0.0",
   "description": "一言 API - Cloudflare Workers 版本，内置完整词库和中国名言名句合集",
+  "license": "AGPL-3.0-only",
   "scripts": {
     "build": "node build-data.js",
     "start": "echo 'Ready for deployment'"

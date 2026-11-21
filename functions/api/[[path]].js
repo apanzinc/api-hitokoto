@@ -1,3 +1,8 @@
+// 本文件修改自 welyfun/api-hitokoto（AGPL-3.0）。
+// Copyright (C) welyfun and contributors
+// Modified by apanzinc <apanzinc@outlook.com>, 2026-11-21.
+// 修改内容与完整修改文件清单见仓库根目录 NOTICE。
+
 import { getSentencesData } from '../../data/sentences.js';
 import {
   CATEGORIES,

@@ -10,6 +10,11 @@
 
 词库来源：[hitokoto-osc/sentences-bundle](https://github.com/hitokoto-osc/sentences-bundle)。本仓库按 AGPL-3.0 授权。
 
+> **修改声明（AGPL-3.0 §5(a)）**
+> 本仓库是 [welyfun/api-hitokoto](https://github.com/welyfun/api-hitokoto) 的修改版本，
+> 修改者 apanzinc，修改日期 2026-11-21。修改过的文件、修改内容摘要和新增文件清单见
+> [NOTICE](NOTICE)。原作品版权归 welyfun and contributors 所有。
+
 ## 快速调用
 
 ```
@@ -162,3 +167,5 @@ npx wrangler dev   # 本地监听 8787
 ## 协议与致谢
 
 本程序采用 AGPL-3.0。若修改代码并对外提供服务，需公开你的修改版本。语句数据版权归原作者所有，来源为 [一言](https://hitokoto.cn/) 与 [句子包](https://sentences-bundle.hitokoto.cn/)。
+
+原作品：[welyfun/api-hitokoto](https://github.com/welyfun/api-hitokoto)，Copyright (C) welyfun and contributors，AGPL-3.0。本仓库对其作了修改，修改文件清单、修改内容与日期记录在 [NOTICE](NOTICE)；按 AGPL-3.0 §5 要求，各修改过的源文件头部也带有修改声明。本程序不提供任何担保。完整许可证文本见 [LICENSE](LICENSE)。

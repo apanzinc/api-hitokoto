@@ -1,7 +1,7 @@
 {
-  "name": "hitokoto-api-pages",
+  "name": "hitokoto-api-workers",
   "version": "1.0.0",
-  "description": "一言API - Cloudflare Pages版本",
+  "description": "一言 API - Cloudflare Workers 版本，内置完整词库和中国名言名句合集",
   "scripts": {
     "build": "node build-data.js",
     "start": "echo 'Ready for deployment'"
